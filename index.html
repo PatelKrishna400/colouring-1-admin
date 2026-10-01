@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloring Pages App - Admin</title>
+    <meta name="description" content="Admin dashboard for the coloring pages application.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+        :root {
+            --primary: #4ecdc4;
+            --secondary: #ff6b6b;
+            --dark: #292f36;
+            --light: #f7fff7;
+            --panel: rgba(255, 255, 255, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            color: var(--dark);
+        }
+
+        .sidebar {
+            width: 250px;
+            background: var(--dark);
+            color: white;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+        }
+
+        .sidebar h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .nav-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: rgba(255,255,255,0.1);
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: var(--panel);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--panel);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .content-panel {
+            background: var(--panel);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <div class="nav-item active">Dashboard</div>
+        <div class="nav-item">Manage Pages</div>
+        <div class="nav-item">Users</div>
+        <div class="nav-item">Settings</div>
+    </div>
+
+    <main>
+        <header>
+            <h1>Dashboard Overview</h1>
+            <button class="btn">Add New Page</button>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">124</div>
+                <div class="stat-label">Total Coloring Pages</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">8,492</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">45K</div>
+                <div class="stat-label">Downloads</div>
+            </div>
+        </div>
+
+        <div class="content-panel">
+            <h2>Recent Activity</h2>
+            <p style="margin-top: 1rem; color: #666;">No recent activity to display.</p>
+        </div>
+    </main>
+</body>
+</html>
